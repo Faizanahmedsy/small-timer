@@ -1,0 +1,11 @@
+In the example provided, we use the `useEffect` hook to start a timer and update the `seconds` state every second. 
+
+The `useEffect` hook allows us to perform side effects in our functional components. In this case, the side effect we want to achieve is to start a timer and update the state at a regular interval.
+
+By using the `useEffect` hook with an empty dependency array (`[]`) as the second argument, we ensure that the effect runs only once when the component is initially rendered. This mimics the behavior of the `componentDidMount` lifecycle method in class components.
+
+Inside the effect's callback function, we use `setInterval` to schedule the increment of the `seconds` state by 1 every second. This interval is set up when the component is mounted.
+
+Additionally, the `useEffect` hook also provides a way to clean up after the component. In this example, we return a cleanup function from the effect that clears the interval using `clearInterval` when the component is unmounted. This is similar to the `componentWillUnmount` lifecycle method in class components.
+
+Using `useEffect` in this scenario allows us to handle the lifecycle of starting and stopping the timer correctly, ensuring that the timer starts when the component mounts and stops when the component unmounts.
